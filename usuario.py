@@ -28,19 +28,27 @@ import getpass
 
 def obter_dados_cadastro():
     # PB01 [T02] - Desenvolver entradas (inputs) para cadastro ==========================================
-    print("\n--- TELA DE CADASTRO ---")
-    nome = input("Digite seu nome completo: ").strip()
-    email = input("Digite seu e-mail: ").strip()
+    while True:
+        print("\n--- TELA DE CADASTRO ---")
+        nome = input("Digite seu nome completo: ").strip()
+        email = input("Digite seu e-mail: ").strip()
+        # Getpass garante segurança
+        senha = getpass.getpass("Digite sua senha (a digitação ficará invisível por segurança): ").strip()
+        # obs: No flet o getpass fica ft.TextField(password=True)
 
-    # Getpass garante segurança
-    senha = getpass.getpass("Digite sua senha (a digitação ficará invisível por segurança): ").strip()
+        # T03: Validação de campos vazios
+        if not nome or not email or not senha:
+            print("Erro: Todos os campos são obrigatórios!\n")
+            continue
 
-    # obs: No flet o getpass fica ft.TextField(password=True)
-    
-    return nome, email, senha
+        if "@" not in email:
+            print("Erro: Digite um e-mail válido")
+            continue
+        
+        return nome, email, senha
 
 # Teste isolado para PB01[T02]
 if __name__ == "__main__":
     nome, email, senha = obter_dados_cadastro()
     print(f"\n[Teste] Dados recebidos com sucesso!")
-    print(f"Nome: {nome} | E-mail: {email} | Senha: (oculta por segurança, mas recebida no código)")
+    print(f"Nome: {nome} | E-mail: {email} | Senha: (oculta por segurança, mas recebido no código)")
