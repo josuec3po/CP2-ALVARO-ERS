@@ -32,7 +32,6 @@ def obter_dados_cadastro():
         print("\n--- TELA DE CADASTRO ---")
         nome = input("Digite seu nome completo: ").strip()
         email = input("Digite seu e-mail: ").strip()
-        # Getpass garante segurança
         senha = getpass.getpass("Digite sua senha (a digitação ficará invisível por segurança): ").strip()
         # obs: No flet o getpass fica ft.TextField(password=True)
 
