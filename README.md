@@ -36,5 +36,26 @@ O endereço da API está em `database/servidor.json`. **Não publique a chave no
 As três tasks, os contratos e as instruções de integração estão em
 [docs/PB14-integracao.md](docs/PB14-integracao.md).
 
-O `main.py` original ainda não utiliza essa camada. A conexão dos módulos de
-usuário, imóveis e consumo será feita com os responsáveis pelas respectivas histórias.
+## PB03/PB04 — Cadastro e manutenção de imóveis
+
+O módulo `imoveis.py` implementa cadastro, listagem, edição e exclusão com
+confirmação, usando o banco da PB14. A entrada é o ID da conta autenticada por PB02:
+
+```python
+from imoveis import executar_menu_imoveis
+
+# Após o login validar as credenciais:
+executar_menu_imoveis(usuario_autenticado['id'], banco)
+```
+
+Para experimentar o menu com dados fictícios descartáveis, sem depender do login:
+
+```powershell
+python imoveis.py --demo
+```
+
+As seis tasks e o contrato com o responsável por PB01/PB02 estão em
+[docs/PB03-PB04-imoveis.md](docs/PB03-PB04-imoveis.md).
+
+O `main.py` original foi preservado. A ligação do menu principal/login ao módulo
+de imóveis ainda depende da integração das histórias de usuários da equipe.

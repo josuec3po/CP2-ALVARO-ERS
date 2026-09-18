@@ -180,7 +180,11 @@ Guarde o backup fora do repositório porque ele contém os dados e hashes.
 Mudanças futuras de estrutura precisam de migrações: o script inicial não altera
 colunas de tabelas existentes. Não apague/recrie tabelas para atualizar a base compartilhada.
 
-O `main.py` original ainda não chama esta camada. A PB14 está entregue como
-infraestrutura e persistência, com integração dos fluxos reais pendente dos módulos
-da equipe. A conclusão funcional exige testar cadastro/login, imóvel e consumo,
-sair do programa e recuperar os registros na conta correta pela interface integrada.
+O módulo `imoveis.py` (PB03/PB04) já utiliza esta camada para cadastro, edição e
+exclusão com confirmação. As seis tasks e a chamada pós-login estão em
+[PB03-PB04-imoveis.md](PB03-PB04-imoveis.md).
+
+O `main.py` original ainda não chama esses módulos. A integração do login e do
+fluxo de consumo depende dos responsáveis por essas histórias. O aceite completo
+do produto exige entrar na conta, cadastrar imóvel/consumo, sair e recuperar os
+registros na conta correta pela interface integrada.
