@@ -1,0 +1,17 @@
+{
+  "name": "cp2-alvaro-pb14",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "types": "wrangler types --include-runtime=false",
+    "check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260918.1",
+    "@types/node": "^26.6.1",
+    "typescript": "^7.0.2",
+    "wrangler": "^4.135.0"
+  }
+}
