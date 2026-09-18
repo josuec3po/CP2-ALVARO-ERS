@@ -6,7 +6,7 @@ import sys
 import tempfile
 import unittest
 
-from persistencia_local import BancoDados, RegistroNaoEncontrado
+from tests.banco_local import BancoDados, RegistroNaoEncontrado
 
 
 class PersistenciaTests(unittest.TestCase):
@@ -24,7 +24,7 @@ class PersistenciaTests(unittest.TestCase):
     def test_dados_sobrevivem_em_outro_processo(self):
         self.banco.salvar_consumo(self.usuario, self.imovel, 2026, 8, 320.5)
         codigo = (
-            "import json, sys; from persistencia_local import BancoDados; "
+            "import json, sys; from tests.banco_local import BancoDados; "
             "b = BancoDados(sys.argv[1]); b.inicializar(); "
             "print(json.dumps([b.listar_imoveis(int(sys.argv[2])), "
             "b.listar_consumos(int(sys.argv[2]), int(sys.argv[3]))]))"

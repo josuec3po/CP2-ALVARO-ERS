@@ -1,7 +1,4 @@
-"""PB14: adaptador SQLite para testes locais, sem autenticação.
-
-O sistema da equipe usa o cliente remoto em persistencia.py.
-"""
+"""Adaptador SQLite exclusivo dos testes automatizados."""
 
 from contextlib import contextmanager
 import math
@@ -9,8 +6,7 @@ from pathlib import Path
 import sqlite3
 
 
-RAIZ = Path(__file__).resolve().parent
-BANCO_PADRAO = RAIZ / "data" / "energia.db"
+RAIZ = Path(__file__).resolve().parents[1]
 
 
 class RegistroNaoEncontrado(ValueError):
@@ -30,7 +26,7 @@ class BancoDados:
     O arquivo deve ser local; não usar :memory: ou compartilhar via pasta de rede.
     """
 
-    def __init__(self, caminho=BANCO_PADRAO):
+    def __init__(self, caminho):
         if str(caminho) == ":memory:":
             raise ValueError("Informe um arquivo para garantir persistência.")
         self.caminho = Path(caminho).resolve()
@@ -146,9 +142,3 @@ class BancoDados:
                 "SELECT id, imovel_id, ano, mes, consumo_kwh FROM consumos "
                 "WHERE imovel_id = ? ORDER BY ano, mes", (imovel_id,),
             )]
-
-
-if __name__ == "__main__":
-    banco = BancoDados()
-    banco.inicializar()
-    print(f"Banco inicializado em: {banco.caminho}")

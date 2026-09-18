@@ -3,10 +3,7 @@
 Contrato: executar_menu_imoveis(usuario_id, banco=None). O ID vem da sessão;
 este módulo não cadastra usuários, verifica senhas nem solicita IDs ao usuário.
 """
-import argparse
-from pathlib import Path
 import sqlite3
-import tempfile
 
 from persistencia import BancoDados, ErroConexao
 
@@ -141,25 +138,3 @@ def executar_menu_imoveis(usuario_id, banco=None, *, entrada=input, saida=print)
         saida(str(erro))
         return
     menu.executar()
-
-
-def demonstrar():
-    """Demonstração descartável para desenvolver antes de PB01/PB02 estarem prontos."""
-    from persistencia_local import BancoDados as BancoLocal
-
-    with tempfile.TemporaryDirectory(prefix="pb03-pb04-demo-") as pasta:
-        banco = BancoLocal(Path(pasta) / "demo.db")
-        banco.inicializar()
-        usuario = banco.salvar_usuario("Demonstração", "demo@example.test", "hash-sintetico-sem-login")
-        print("DEMONSTRAÇÃO LOCAL: usuário fictício, sem acesso ao banco online; dados descartados ao sair.")
-        executar_menu_imoveis(usuario, banco)
-
-
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Módulo de imóveis; na aplicação real é chamado após o login de PB02.")
-    parser.add_argument("--demo", action="store_true", help="Experimentar os fluxos com dados locais descartáveis")
-    argumentos = parser.parse_args()
-    if argumentos.demo:
-        demonstrar()
-    else:
-        parser.print_help()

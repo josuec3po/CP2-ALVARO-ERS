@@ -1,61 +1,52 @@
 # Checkpoint 2 - Energias Renováveis e Sustentáveis (ERS)
 
-**Integrantes:** 
-* Josué Franco Braga - RM 569174
-* Andrei Henrique Santos - RM 569440
-* Heitor Maxímus Mucha - RM 571407
-* Enrico Marinho de Aquino - RM 569338
-* Gabriel Cavaloti RM - 571643
+**Disciplina:** Enterprise Resilience and Security
 
+**Integrantes:**
 
-<br>
-**Disciplina:** Enterprise Resilience and Security  
+- Josué Franco Braga - RM 569174
+- Andrei Henrique Santos - RM 569440
+- Heitor Maxímus Mucha - RM 571407
+- Enrico Marinho de Aquino - RM 569338
+- Gabriel Cavaloti - RM 571643
 
-## Descrição do Projeto
-Este repositório contém a entrega do Checkpoint 2 (CP2).
+[Trello da equipe](https://trello.com/b/zAVDuqLe/fiap-cp-alvaro)
 
-Trello: https://trello.com/b/zAVDuqLe/fiap-cp-alvaro
+## Funcionalidades desta branch
 
-## PB14 — Banco de dados e persistência
+- **PB03:** cadastro de imóveis com identificação, endereço/localidade e tipo.
+- **PB04:** edição e exclusão com confirmação.
+- **PB14:** persistência em banco compartilhado hospedado no Cloudflare D1.
 
-A equipe usa **um único banco online**, hospedado no Cloudflare D1, com tabelas
-de usuários, imóveis e consumos. O Python (3.10+) acessa esse banco por uma API HTTPS.
-Não é necessário instalar pacotes Python, Node.js ou Wrangler para usar a conexão.
+## Configuração
 
-Cada integrante recebe a chave de acesso do mantenedor por um canal privado e executa:
+Requisito: Python 3.10 ou superior. Na raiz do projeto:
 
 ```powershell
 python configurar_conexao.py
 python persistencia.py
 ```
 
-O primeiro comando solicita a chave com entrada oculta e salva a configuração
-local em `.pb14.local.json`, ignorado pelo Git. O segundo verifica a conexão online.
-O endereço da API está em `database/servidor.json`. **Não publique a chave no GitHub.**
+Informar a chave de acesso fornecida pela equipe. Ela fica em `.pb14.local.json`,
+ignorado pelo Git. O segundo comando verifica a conexão com o banco online.
 
-As três tasks, os contratos e as instruções de integração estão em
-[docs/PB14-integracao.md](docs/PB14-integracao.md).
+## Integração
 
-## PB03/PB04 — Cadastro e manutenção de imóveis
-
-O módulo `imoveis.py` implementa cadastro, listagem, edição e exclusão com
-confirmação, usando o banco da PB14. A entrada é o ID da conta autenticada por PB02:
+Após autenticar o usuário pela PB02, o menu principal chama:
 
 ```python
 from imoveis import executar_menu_imoveis
 
-# Após o login validar as credenciais:
 executar_menu_imoveis(usuario_autenticado['id'], banco)
 ```
 
-Para experimentar o menu com dados fictícios descartáveis, sem depender do login:
+`banco` é a conexão da PB14. A integração com o menu principal depende de PB01/PB02.
+
+## Documentação e testes
+
+- [Tasks e regras de PB03/PB04](docs/PB03-PB04-imoveis.md)
+- [Tasks, banco e interface de PB14](docs/PB14-integracao.md)
 
 ```powershell
-python imoveis.py --demo
+python -m unittest discover -s tests -v
 ```
-
-As seis tasks e o contrato com o responsável por PB01/PB02 estão em
-[docs/PB03-PB04-imoveis.md](docs/PB03-PB04-imoveis.md).
-
-O `main.py` original foi preservado. A ligação do menu principal/login ao módulo
-de imóveis ainda depende da integração das histórias de usuários da equipe.

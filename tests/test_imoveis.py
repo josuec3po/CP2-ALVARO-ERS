@@ -5,7 +5,7 @@ from unittest.mock import patch
 
 from imoveis import executar_menu_imoveis
 from persistencia import ErroConexao
-from persistencia_local import BancoDados
+from tests.banco_local import BancoDados
 
 
 class ImoveisTests(unittest.TestCase):
