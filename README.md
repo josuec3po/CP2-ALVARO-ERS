@@ -9,7 +9,7 @@
 
 
 <br>
-**Disciplina:** Enterprise Resilience and Security  
+**Disciplina:** ERS
 
 ## Descrição do Projeto
 Este repositório contém a entrega do Checkpoint 2 (CP2).
