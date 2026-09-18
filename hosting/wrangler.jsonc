@@ -1,0 +1,21 @@
+{
+	"$schema": "./node_modules/wrangler/config-schema.json",
+	"name": "cp2-alvaro-pb14",
+	"main": "src/index.ts",
+	"compatibility_date": "2026-09-18",
+	"compatibility_flags": [
+		"nodejs_compat"
+	],
+	"workers_dev": true,
+	"preview_urls": false,
+	"observability": {
+		"enabled": true
+	},
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "cp2-alvaro-ers",
+			"database_id": "17c2a48c-1ebd-4190-a73f-1d6cdc1379c4"
+		}
+	]
+}
