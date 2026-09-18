@@ -3,7 +3,7 @@ import sqlite3
 # PB01[T01] Criar o arquivo do banco SQLite. ===========================================================
 def inicializar_banco():
     
-    conexao = sqlite3.connect('energia.db')
+    conexao = sqlite3.connect('database.db')
     cursor = conexao.cursor()
     
     cursor.execute('''
@@ -17,11 +17,11 @@ def inicializar_banco():
     
     conexao.commit()
     conexao.close()
-    print("Tabela 'usuarios' configurada com sucesso no banco energia.db!")
+    print("Tabela 'usuarios' configurada com sucesso no banco!")
 
 # Teste isolado para PB01[T01]
 if __name__ == "__main__":
-    inicializar_banco()
+   inicializar_banco()
 # =======================================================================================================
 
 import getpass
@@ -51,3 +51,36 @@ if __name__ == "__main__":
     nome, email, senha = obter_dados_cadastro()
     print(f"\n[Teste] Dados recebidos com sucesso!")
     print(f"Nome: {nome} | E-mail: {email} | Senha: (oculta por segurança, mas recebido no código)")
+
+import bcrypt
+
+def salvar_usuario(nome, email, senha):
+    # Criptografa a senha e salva o novo usuário no banco de dados.
+    # Gera o hash seguro da senha usando bcrypt
+    salt = bcrypt.gensalt()
+    senha_hash = bcrypt.hashpw(senha.encode('utf-8'), salt)
+    
+    try:
+        conexao = sqlite3.connect('database.db')
+        cursor = conexao.cursor()
+        
+        # Executa a inserção no banco
+        cursor.execute('''
+            INSERT INTO usuarios (nome, email, senha_hash)
+            VALUES (?, ?, ?)
+        ''', (nome, email, senha_hash))
+        
+        conexao.commit()
+        print(f"\nUsuário '{nome}' foi registrado.")
+
+    except sqlite3.IntegrityError:
+        # Trava para nao registrar mesmo email
+        print(f"\nErro: E-mail '{email}' já cadstrado. Use outro!")
+    finally:
+        conexao.close()
+
+# Fluxo de teste T04
+if __name__ == "__main__":
+    inicializar_banco()
+    n, e, s = obter_dados_cadastro()
+    salvar_usuario(n, e, s)
