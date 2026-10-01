@@ -1,12 +1,10 @@
-# cadastro.py
 # PB01 - Cadastro de usuário
 
 import dados
 
-
 # T03 - Validar os campos do cadastro
 def validar_campos(nome, email, senha):
-    """Retorna uma mensagem de erro, ou None se estiver tudo certo."""
+
     if nome == "" or email == "" or senha == "":
         return "Todos os campos são obrigatórios."
 
@@ -59,7 +57,7 @@ def cadastrar_usuario():
     return True
 
 
-# Teste rápido: rode "python cadastro.py"
+# Teste 
 if __name__ == "__main__":
     cadastrar_usuario()
     print(dados.usuarios)

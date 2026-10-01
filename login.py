@@ -1,4 +1,3 @@
-# login.py
 # PB02 - Acesso à conta (login)
 
 import dados
@@ -6,7 +5,7 @@ import dados
 
 # T02 - Procurar o usuário pelo e-mail
 def buscar_usuario_por_email(email):
-    """Retorna o usuário encontrado ou None se o e-mail não existir."""
+    
     for usuario in dados.usuarios:
         if usuario["email"] == email:
             return usuario
@@ -15,7 +14,7 @@ def buscar_usuario_por_email(email):
 
 # T03 - Conferir a senha
 def senha_correta(usuario, senha):
-    """Retorna True se a senha digitada for igual à senha guardada."""
+    
     return usuario["senha"] == senha
 
 
@@ -42,11 +41,9 @@ def login():
     dados.usuario_logado = usuario  # PB15: guarda quem está logado
     menu_principal()
     return True
-e
 
-# Teste rápido: rode "python login.py"
+# Teste 
 if __name__ == "__main__":
-    # Usuário de teste, só para testar o login sozinho
     dados.usuarios.append(
         {"id": 1, "nome": "Ana", "email": "ana@email.com", "senha": "1234"}
     )

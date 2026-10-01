@@ -1,6 +1,4 @@
-# teste_pb15.py
 # PB15 T04 - Testes práticos de isolamento de dados
-# Rode com: python teste_pb15.py
 
 import builtins
 import dados
@@ -10,7 +8,7 @@ import privacidade
 
 
 def fazer_login(email, senha):
-    """Simula o usuário digitando e-mail e senha no login."""
+    
     respostas = iter([email, senha])
     builtins.input = lambda texto="": next(respostas)
     login.login()

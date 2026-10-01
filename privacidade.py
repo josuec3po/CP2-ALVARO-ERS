@@ -1,4 +1,3 @@
-# privacidade.py
 # PB15 - Isolamento e privacidade dos imóveis
 
 import dados
@@ -13,8 +12,7 @@ def sair():
 
 
 # T01 - Ligar cada imóvel ao seu dono
-# PROVISÓRIO: quando o cadastro de imóveis real existir, basta ele
-# colocar a chave "id_usuario" no dicionário, como é feito aqui.
+# PROVISÓRIO
 def cadastrar_imovel(nome):
     if dados.usuario_logado is None:
         print("Erro: faça login primeiro.")
@@ -36,7 +34,7 @@ def cadastrar_imovel(nome):
 
 # T03 - Filtrar imóveis pelo usuário logado
 def listar_meus_imoveis():
-    """Retorna só os imóveis do usuário logado."""
+    
     meus = []
     if dados.usuario_logado is None:
         return meus
@@ -48,7 +46,7 @@ def listar_meus_imoveis():
 
 
 def buscar_meu_imovel(id_imovel):
-    """Retorna o imóvel só se ele for do usuário logado, senão None."""
+   
     for imovel in listar_meus_imoveis():
         if imovel["id"] == id_imovel:
             return imovel
