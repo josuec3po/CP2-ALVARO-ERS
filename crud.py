@@ -1,4 +1,4 @@
-from database import conectar
+from db_connection import conectar
 
 
 # ============================================================
@@ -763,6 +763,60 @@ def consumo_por_data(comodo):
         """, (comodo,))
 
         return cursor.fetchall()
+
+    finally:
+        cursor.close()
+        conexao.close()
+
+def consumo_horario_imovel(imovel_id, data_referencia=None):
+    """
+    Retorna o consumo total de um imóvel agrupado por hora.
+    Por padrão busca a data_referencia informada (ex: hoje).
+    Caso não existam registos para essa data, busca automaticamente
+    os dados da última data disponível no banco.
+    """
+    conexao = conectar()
+
+    try:
+        cursor = conexao.cursor(dictionary=True)
+
+        # Se não for informada uma data, usa a data de hoje por padrão
+        if data_referencia is None:
+            from datetime import datetime
+            data_referencia = datetime.now().strftime('%Y-%m-%d')
+
+        sql = """
+            SELECT 
+                HOUR(ce.data) AS hora, 
+                SUM(ce.consumo_kwh) AS consumo_total
+            FROM consumo_energetico ce
+            INNER JOIN comodos c ON ce.comodo = c.id
+            WHERE c.imovel = %s AND DATE(ce.data) = %s
+            GROUP BY HOUR(ce.data)
+            ORDER BY hora
+        """
+
+        cursor.execute(sql, (imovel_id, data_referencia))
+        resultados = cursor.fetchall()
+
+        # Se não houver nenhum registro para a data informada (ex: hoje),
+        # busca a última data que possui registros para este imóvel.
+        if not resultados:
+            cursor.execute("""
+                SELECT MAX(DATE(ce.data)) AS ultima_data 
+                FROM consumo_energetico ce
+                INNER JOIN comodos c ON ce.comodo = c.id
+                WHERE c.imovel = %s
+            """, (imovel_id,))
+            
+            res_data = cursor.fetchone()
+            ultima_data = res_data['ultima_data'] if res_data else None
+
+            if ultima_data:
+                cursor.execute(sql, (imovel_id, ultima_data))
+                resultados = cursor.fetchall()
+
+        return resultados
 
     finally:
         cursor.close()
