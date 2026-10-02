@@ -13,6 +13,8 @@
 # em kWh/mês, obtido pela soma do consumo de todos os equipamentos cadastrados.
 # ================================================================================================================================================
 
+from orcamento import executar_orcamento
+
 # Dicionários com desc/ dos equipamentos e respectivos IDs unicos
 equipamentos_domesticos = [
     {"id": 1, "nome": "Chuveiro Elétrico", "categoria": "Banheiro", "potencia_w": 5500},
@@ -91,5 +93,14 @@ if len(equipamentos_do_imovel) > 0:
     print(f"{'-'*60}")
     print(f" CONSUMO TOTAL ESTIMADO: {consumo_total:.2f} kWh/mês")
     print(f"{'='*60}\n")
+
+    if consumo_total > 0:
+        while True:
+            gerar_orcamento = input("Gerar proposta solar da PB21? (s/n): ").strip().lower()
+            if gerar_orcamento in ("s", "n"):
+                break
+            print("Digite s ou n.")
+        if gerar_orcamento == "s":
+            executar_orcamento(consumo_total)
 else:
     print("\nNenhum equipamento foi cadastrado.")
