@@ -1,0 +1,11 @@
+id;fabricante;modelo;potencia_wp;voc_v;isc_a;vmp_v;imp_a;eficiencia_pct;preco_brl;fornecedor;data_coleta;url_fonte
+1;Canadian Solar;CS6W-550MS;550;49.0;14.0;41.7;13.2;21.5;589.0;Minha Casa Solar;2026-10-02;https://www.minhacasasolar.com.br/painel-solar-550w-monocristalino-half-cell-canadian-cs6w-550ms-82127
+2;Sine Energy;SN555-144M;555;49.98;13.87;41.48;13.38;21.48;575.27;Minha Casa Solar;2026-10-02;https://www.minhacasasolar.com.br/painel-solar-555w-monocristalino-half-cell-sine-energy-compativel-550w-sn555-144m-81851
+3;Sunova;SS-555-72MDH;555;49.68;14.13;40.89;13.58;21.5;739.0;Minha Casa Solar;2026-10-02;https://www.minhacasasolar.com.br/painel-solar-555w-sunova-monocristalino-half-cell-compativel-550w-ss-555-72mdh-81824
+4;Resun;RS8I-550M;550;49.9;14.0;41.96;13.11;21.28;599.0;FW Distribuição;2026-10-02;https://www.fwdistribuicao.com.br/energiasolar/resun-rs8i-550m-550w
+5;Honor Solar;HYM10 144 550P;550;49.8;14.01;41.28;13.32;21.3;729.0;Minha Casa Solar;2026-10-02;https://www.minhacasasolar.com.br/painel-solar-550w-honor-solar-hym10-144-550p-outlet-82103
+6;ZnShine;ZXM7-NPLD144 555W;555;50.3;13.96;42.0;13.22;21.48;575.27;Minha Casa Solar;2026-10-02;https://www.minhacasasolar.com.br/painel-solar-555w-mono-half-cell-compativel-550w-znshine-zxm7-npld144-82175
+7;Trina Solar;535W bifacial;535;;;;;;1400.0;Mercado Livre;2026-10-02;https://lista.mercadolivre.com.br/painel-solar-450w-bifacial
+8;Gokin;710W bifacial;710;;;;;;1600.0;Mercado Livre;2026-10-02;https://lista.mercadolivre.com.br/painel-solar-450w-bifacial
+9;Bloombe;550W monocristalino;550;;;;;;1099.0;Mercado Livre;2026-10-02;https://lista.mercadolivre.com.br/painel-solar-450w-bifacial
+10;Helius Sunlink PV;Genesis 630W bifacial;630;48.88;;40.36;;;762.0;Mercado Livre;2026-10-02;https://lista.mercadolivre.com.br/painel-solar-450w-bifacial
