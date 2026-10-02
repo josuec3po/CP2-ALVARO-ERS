@@ -1,10 +1,10 @@
 # PB15 T04 - Testes práticos de isolamento de dados
 
 import builtins
-import dados
-import cadastro
-import login
-import privacidade
+import CP1.dados as dados
+import CP1.cadastro as cadastro
+import CP1.login as login
+import CP1.privacidade as privacidade
 
 
 def fazer_login(email, senha):

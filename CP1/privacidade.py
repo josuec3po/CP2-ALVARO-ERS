@@ -1,6 +1,6 @@
 # PB15 - Isolamento e privacidade dos imóveis
 
-import dados
+import CP1.dados as dados
 
 
 # T02 - Guardar o usuário logado

@@ -1,6 +1,6 @@
 # PB02 - Acesso à conta (login)
 
-import dados
+import CP1.dados as dados
 
 
 # T02 - Procurar o usuário pelo e-mail

@@ -1,6 +1,6 @@
 # PB01 - Cadastro de usuário
 
-import dados
+import CP1.dados as dados
 
 # T03 - Validar os campos do cadastro
 def validar_campos(nome, email, senha):
