@@ -1,0 +1,9 @@
+id;fabricante;modelo;tipo;potencia_nominal_w;potencia_max_fv_w;tensao_max_entrada_v;faixa_mppt_min_v;faixa_mppt_max_v;corrente_max_entrada_a;numero_mppt;compativel_bateria;preco_brl;fornecedor;data_coleta;url_fonte
+1;Canadian Solar;CSI5K22003E;on-grid;5000;7500;600;100;500;15.0;2;não;2599.0;Minha Casa Solar;2026-10-02;https://www.minhacasasolar.com.br/inversor-solar-monofasico-5kw-220v-2mppt-canadian-csi5k22003e-83100
+2;Solplanet;ASW5000-S-G2;on-grid;5000;7500;600;60;560;16.0;2;não;2899.0;Minha Casa Solar;2026-10-02;https://www.minhacasasolar.com.br/inversor-solar-monofasico-5kw-220v-solplanet-asw5000-s-g2-82733
+3;Sungrow;SG5.0RS-L;on-grid;5000;7500;600;40;560;16.0;2;não;4999.0;Minha Casa Solar;2026-10-02;https://www.minhacasolar.com.br/inversor-solar-5kw-220v-2-mppt-sungrow-sg5-0rs-l-83484
+4;Huawei;SUN2000-5KTL-L1;híbrido/battery-ready;5000;7500;600;90;560;12.5;2;sim;6999.0;Minha Casa Solar;2026-10-02;https://www.minhacasasolar.com.br/inversor-solar-monofasico-5kw-220v-2mppt-huawei-sun2000-5ktl-l1-83698
+5;Growatt;MIN5000TL-XH;híbrido/battery-ready;5000;7000;550;80;550;13.5;2;sim;6999.99;Minha Casa Solar;2026-10-02;https://www.minhacasasolar.com.br/inversor-solar-monofasico-5kw-220v-2mppt-growatt-min5000tl-xh-5kw-83257
+6;Growatt;MIN6000TL-X;on-grid;6000;8100;550;60;550;13.5;2;não;3699.0;Minha Casa Solar;2026-10-02;https://www.minhacasasolar.com.br/inversor-solar-monofasico-6kw-220v-2-mppt-growatt-min6000tl-x-82000
+7;Deye;SUN-6K-G05P1-EU-AM2;on-grid;6000;9000;550;70;500;18.0;2;não;2039.0;Minha Casa Solar;2026-10-02;https://www.minhacasasolar.com.br/inversor-solar-monofasico-6kw-220v-2mppt-deye-sun-6k-g05p1-eu-am2-83661
+8;Solis;S6-GR1P8K2;on-grid;8000;13600;550;90;500;18.0;2;não;6275.86;Minha Casa Solar;2026-10-02;https://www.minhacasasolar.com.br/inversor-solar-monofasico-8kw-220v-2mppt-s6-gr1p-8k2-solis-83056

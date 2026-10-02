@@ -1,0 +1,7 @@
+id;fabricante;modelo;tecnologia;tensao_nominal_v;capacidade_ah;capacidade_kwh;dod_pct;ciclos;preco_brl;fornecedor;data_coleta;url_fonte
+1;JFA;12100JFA;LiFePO4;12.0;100;1.28;80;6000;2256.99;Minha Casa Solar;2026-10-02;https://www.minhacasasolar.com.br/bateria-solar-de-litio-100ah-12v-1-2kw-6000-ciclos-jfa-12100jfa-83761
+2;Moura;24MSL100;LiFePO4;24.0;100;2.4;80;6000;4490.11;Minha Casa Solar;2026-10-02;https://www.minhacasasolar.com.br/bateria-solar-de-litio-100ah-24v-2-4kw-6000-ciclos-moura-24msl100-83989
+3;Unipower;UPLFP24-100N;LiFePO4;25.6;100;2.56;80;2000;4443.35;Minha Casa Solar;2026-10-02;https://www.minhacasasolar.com.br/bateria-solar-de-litio-100ah-24v-2-56kw-2000-ciclos-unipower-uplfp24-100n-83781
+4;Unipower;UPLFP48-100 3U EN;LiFePO4;48.0;100;4.8;80;4000;5743.55;Minha Casa Solar;2026-10-02;https://www.minhacasasolar.com.br/bateria-solar-de-litio-100ah-48v-4-8kw-4000-ciclos-com-display-unipower-uplfp48-100-3u-en-83596
+5;GetPower;GPLIFE48-100TS;LiFePO4;48.0;100;4.8;80;6000;5799.0;Minha Casa Solar;2026-10-02;https://www.minhacasasolar.com.br/
+6;Freedom;DF4001;chumbo-ácido estacionária;12.0;225;2.7;20;1500;1799.0;Minha Casa Solar;2026-10-02;https://www.minhacasasolar.com.br/baterias/bateria-estacionaria/bateria-solar
