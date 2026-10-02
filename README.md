@@ -1,17 +1,36 @@
-# Checkpoint 2 - Energias Renováveis e Sustentáveis (ERS)
+import mysql.connector
+from mysql.connector import Error
 
-**Integrantes:** 
-* Josué Franco Braga - RM 569174
-* Andrei Henrique Santos - RM 569440
-* Heitor Maxímus Mucha - RM 571407
-* Enrico Marinho de Aquino - RM 569338
-* Gabriel Cavaloti RM - 571643
 
-<br>
+# Configurações do banco
+DB_CONFIG = {
+    "host": "localhost",
+    "port": 3306,
+    "user": "root",
+    "password": "SUA_SENHA",
+    "database": "energias_alvaro"
+}
 
-**Disciplina:** ERS
 
-## Descrição do Projeto
-Este repositório contém a entrega do Checkpoint 2 (CP2).
+def conectar():
+    """
+    Cria e retorna uma conexão com o banco de dados.
 
-Trello: https://trello.com/b/zAVDuqLe/fiap-cp-alvaro
+    Returns:
+        mysql.connector.connection.MySQLConnection:
+            Conexão ativa com o banco.
+
+    Raises:
+        Error:
+            Caso não seja possível conectar ao banco.
+    """
+
+    try:
+        conexao = mysql.connector.connect(**DB_CONFIG)
+
+        if conexao.is_connected():
+            return conexao
+
+    except Error as erro:
+        print(f"Erro ao conectar ao banco: {erro}")
+        raise
