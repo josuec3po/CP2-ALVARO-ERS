@@ -9,7 +9,8 @@
 
 
 <br>
-**Disciplina:** Enterprise Resilience and Security  
+
+**Disciplina:** Soluções em Energias Renováveis e Sustentáveis
 
 ## Descrição do Projeto
 Este repositório contém a entrega do Checkpoint 2 (CP2).
