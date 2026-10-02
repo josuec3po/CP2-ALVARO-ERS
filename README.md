@@ -9,24 +9,9 @@
 * Enrico Marinho de Aquino - RM 569338
 * Gabriel Cavaloti RM - 571643
 
-
-<br>
-
-**Disciplina:** Soluções em Energias Renováveis e Sustentáveis
-
 ## Descrição do Projeto
 Este repositório contém a entrega do Checkpoint 2 (CP2).
 
-Trello: https://trello.com/b/zAVDuqLe/fiap-cp-alvaro
-nce and Security
-
-**Integrantes:**
-
-- Josué Franco Braga - RM 569174
-- Andrei Henrique Santos - RM 569440
-- Heitor Maxímus Mucha - RM 571407
-- Enrico Marinho de Aquino - RM 569338
-- Gabriel Cavaloti - RM 571643
 
 [Trello da equipe](https://trello.com/b/zAVDuqLe/fiap-cp-alvaro)
 
