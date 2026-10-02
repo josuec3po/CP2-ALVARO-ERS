@@ -98,9 +98,3 @@ CREATE TABLE consumo_energetico (
 
 	FOREIGN KEY (comodo) REFERENCES comodos(id)
 );
-
-/*
-CREATE TABLE fornecedores_energia_solar(
-
-);
-*/

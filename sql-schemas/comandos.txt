@@ -1,5 +1,5 @@
 # Iniciar o servidor MYSQL via Docker (Senha do ususário administrador do sql está como "teste")
-docker run --name mysql --rm -d -e MYSQL_ROOT_PASSWORD=teste mysql
+docker run --name mysql --rm -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=teste mysql
 
 # Adicionar Schema no MYSQL
 docker exec -i mysql mysql -u root -pteste < schema.sql
