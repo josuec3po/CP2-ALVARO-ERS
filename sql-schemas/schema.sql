@@ -96,7 +96,7 @@ CREATE TABLE consumo_energetico (
 	data TIMESTAMP NOT NULL,
 	consumo_kwh DECIMAL(10, 2) NOT NULL,
 
-	FOREING KEY (comodo) REFERENCES comodos(id)
+	FOREIGN KEY (comodo) REFERENCES comodos(id)
 );
 
 /*
