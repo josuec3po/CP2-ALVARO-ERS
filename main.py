@@ -1,3 +1,4 @@
+import grafico
 # DESENVOLVIMENTO DO SISTEMA ====================================================================================================================
 # Desenvolva um sistema simples para estimativa do consumo médio mensal de energia elétrica de uma residência.
 # * O sistema deverá permitir o cadastro do imóvel, contendo informações básicas para sua identificação. 
@@ -93,3 +94,5 @@ if len(equipamentos_do_imovel) > 0:
     print(f"{'='*60}\n")
 else:
     print("\nNenhum equipamento foi cadastrado.")
+
+grafico.main()
