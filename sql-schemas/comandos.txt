@@ -1,0 +1,11 @@
+# Iniciar o servidor MYSQL via Docker (Senha do ususário administrador do sql está como "teste")
+docker run --name mysql --rm -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=teste mysql
+
+# Adicionar Schema no MYSQL
+docker exec -i mysql mysql -u root -pteste < schema.sql
+
+# Adicionar base de teste no banco
+docker exec -i mysql mysql -u root -pteste energias_alvaro < infos_teste.sql
+
+# Acessar banco de dados
+docker exec -it mysql mysql -uroot -p
